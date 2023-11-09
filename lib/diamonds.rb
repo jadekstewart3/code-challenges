@@ -17,3 +17,11 @@ def diamonds(n)
     diamond.join("\n") + "\n"
     #reverse add and join
 end
+
+def diamond(n)
+  return if n.even? || n < 1
+  
+  triangle = (1..n).step(2).map { |i| " " * ((n-i)/2) + "*" * i + "\n" }
+  (triangle + triangle.reverse[1..-1]).join
+end
+#basically same method but more digestable for some reason
