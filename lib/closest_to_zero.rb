@@ -9,18 +9,39 @@
 # [5, 2, 2]       => 2
 # [13, 0, -6]     => 0
 
+# def closest(arr)
+#   min_int = arr.min_by { |n| n.abs }
+#   results = arr.group_by {|int| int }.each_with_object({}) do |(k, v), hash|
+#     hash[k] = v.count
+#   end
+#   if arr.include?(0)
+#     return 0
+#   elsif arr.include?(min_int) && arr.include?(- min_int)
+#       return nil
+#   elsif results[min_int] > 1
+#     min_int
+#   else 
+#     min_int
+#   end
+# end
+
+# def closest(arr)
+#   min_int = arr.min_by { |n| n.abs }
+#   results = arr.tally
+#   if arr.include?(0)
+#     return 0
+#   elsif arr.include?(min_int) && arr.include?(- min_int)
+#       return nil
+#   elsif results[min_int] > 1
+#     min_int
+#   else 
+#     min_int
+#   end
+# end
+
 def closest(arr)
-  min_int = arr.min_by { |n| n.abs }
-  results = arr.group_by {|int| int }.each_with_object({}) do |(k, v), hash|
-    hash[k] = v.count
-  end
-  if arr.include?(0)
-    return 0
-  elsif arr.include?(min_int) && arr.include?(- min_int)
-      return nil
-  elsif results[min_int] > 1
-    min_int
-  else 
-    min_int
+  sorted_values = arr.uniq.sort_by(&:abs)
+  if sorted_values[0].abs != sorted_values[1].abs
+    sorted_values[0]
   end
 end
