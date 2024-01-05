@@ -9,3 +9,5 @@
 def remove_every_other(arr)
   arr.select.with_index { |_,idx| idx.even? }
 end
+
+# _ is used as a placeholder variable that you do not intend to use
