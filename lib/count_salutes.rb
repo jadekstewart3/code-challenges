@@ -1,16 +1,12 @@
-def count_salutes(string)
-  arrows = string.scan(/>|</)
+def count_salutes(hallway)
   salute_counter = 0 
-  arrows.each_with_index do |arrow, i|
-    if arrow == ">" && arrows[i + 1] == "<" 
-      salute_counter += 2
-    elsif arrow == ">" && arrows[i +1] == ">"
-      next
+  meeting_points = 0 
+  hallway.each_char do |person|
+    if person == ">"
+      meeting_points += 1
+    elsif person == "<"
+      salute_counter += 2 * meeting_points
     end
   end
   salute_counter
 end
-
-#need to reiterate maybe to count salutes retroactively
-#potentially discard saluters that have saluted coming from the left
-#closer!
