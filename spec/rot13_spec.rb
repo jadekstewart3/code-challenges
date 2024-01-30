@@ -10,4 +10,8 @@ RSpec.describe "rot 13 cipher" do
   it "decodes case-sensitive text" do 
     expect(rot_13("Grfg")).to eq("Test")
   end
+
+  it "it preserves numbers within text" do 
+    expect(rot_13("wnq3")).to eq("jad3")
+  end
 end
