@@ -14,4 +14,8 @@ RSpec.describe "rot 13 cipher" do
   it "it preserves numbers within text" do 
     expect(rot_13("wnq3")).to eq("jad3")
   end
+
+  it "preserves special characters within text" do 
+    expect(rot_13("Cuv-yvc")).to eq("Phi-lip")
+  end
 end
