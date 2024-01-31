@@ -10,6 +10,6 @@
 
 #alternate clever solution
 def two_sum(numbers, target)
-  pair = numbers.combination(2).find{ |(a,b)| a+b == target }
+  pair = numbers.combination(2).find{ |a, b| a + b == target }
   [numbers.index(pair[0]), numbers.rindex(pair[1])]
 end
