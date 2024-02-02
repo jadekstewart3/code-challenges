@@ -11,3 +11,8 @@ def persistence(num)
 end
 # this can be done with recursion- less efficient though
 #requires additional counter argument to pass counter data
+
+def persistence(num)
+  num < 10 ? 0 : 1 + persistence(num.digits.reduce(:*))
+end
+# eliminates the need for an explicit counter variable because the count is effectively accumulated through the return values of the recursive calls
