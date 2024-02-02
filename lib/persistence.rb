@@ -9,4 +9,5 @@ def persistence(num)
   end
  counter
 end
-
+# this can be done with recursion- less efficient though
+#requires additional counter argument to pass counter data
