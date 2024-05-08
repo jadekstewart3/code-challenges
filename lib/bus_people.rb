@@ -21,8 +21,14 @@
 # end
 
 # refactor 
+# def number(bus_stops)
+#   bus_stops.map do |on, off|
+#     (on - off)
+#   end.sum
+# end
+
+# another refactor
+
 def number(bus_stops)
-  bus_stops.map do |on, off|
-    (on - off)
-  end.sum
+  bus_stops.sum { |on, off| on - off }
 end
