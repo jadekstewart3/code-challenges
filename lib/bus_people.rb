@@ -32,3 +32,5 @@
 def number(bus_stops)
   bus_stops.sum { |on, off| on - off }
 end
+
+# I think this is the best solution because I am only calling one iterator instead of two or more
