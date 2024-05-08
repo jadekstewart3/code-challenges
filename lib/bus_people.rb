@@ -10,13 +10,19 @@
 
 # The second value in the first pair in the array is 0, since the bus is empty in the first bus stop. 
 
-def number(bus_stops)
-  people_on = []
-  people_off =[]
-  bus_stops.each do |people|
-   people_on << people[0]
-    people_off << people[1]
-  end
-  people_on.sum - people_off.sum
-end
+# def number(bus_stops)
+#   people_on = []
+#   people_off =[]
+#   bus_stops.each do |people|
+#    people_on << people[0]
+#     people_off << people[1]
+#   end
+#   people_on.sum - people_off.sum
+# end
 
+# refactor 
+def number(bus_stops)
+  bus_stops.map do |on, off|
+    (on - off)
+  end.sum
+end
